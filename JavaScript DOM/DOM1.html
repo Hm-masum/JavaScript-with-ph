@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: rgb(192, 36, 57);
+        }
+        .important-places{
+            color: blueviolet;
+        }
+        .large-text{
+            font-size: 24px;
+        }
+        .text-center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my DOM</h1>
+    </header>
+    <main id="main-container">
+        <section>
+            <h1>I want learn DOM</h1>
+            <ul>
+                <li>1.JS Basic</li>
+                <li>2.Js DOM</li>
+                <li>3.HTML</li>
+                <li>4.CSS</li>
+            </ul>
+        </section>
+        <section class="fruits-container">
+            <h1 id="fruits-title">Fruits i like</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Carrot</li>
+            </ul>
+        </section>
+        <section id="places-container" class="large-text">
+            <h1>Places I like to visit</h1>
+            <ul id="Places-list">
+                <li class="important-places">Sondarbon</li>
+                <li class="important-places">Bandarbon</li>
+                <li class="important-places">Katabon</li>
+                <li>salbon</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Java Script -->
+    <script src="DOM1.js"></script>
+    <script>
+    //....01....getElement property
+        const liCollection=document.getElementsByTagName('li')
+        for(const li of liCollection){
+            //console.log(li)
+        }
+
+        const allHeadings=document.getElementsByTagName('h1')
+        for(const h1 of allHeadings){
+            //console.log(h1.innerText)
+        }
+
+        const fruitsTitle=document.getElementById('fruits-title');
+        fruitsTitle.innerText='Fruits changed by js'
+        //console.log(fruitsTitle)
+
+        const Places=document.getElementsByClassName('important-places')
+        for(const Place of Places){
+            //console.log(Place.innerText)
+        }
+
+
+    //....02....Query selector All
+        const someLi=document.querySelectorAll('.fruits-container li')
+        for(const li of someLi){
+            //console.log(li.innerText)
+        }
+        
+
+    //....03....Styles in js
+        document.getElementById('fruits-title').style.backgroundColor='aqua'
+        document.getElementById('fruits-title').style.textAlign='center'
+        
+    
+    //....04....Set attribute
+        const title=document.getElementById('fruits-title')
+        title.setAttribute('title','tooltip set by JavaScript')
+
+    
+    //....05....like array
+        const arr1=document.getElementsByClassName('fruits-container')[0].innerHTML
+        //console.log(arr1)
+
+        const arr2=document.getElementsByClassName('fruits-container')[0].innerText
+        console.log(arr2)
+    </script> 
+</body>
+</html>
